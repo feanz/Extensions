@@ -33,7 +33,7 @@ namespace Extensions
         /// <returns> The new fixed length string </returns>
         public static string ForceLength(this int number, int length)
         {
-            string s = number.ToString();
+            string s = number.ToString(CultureInfo.InvariantCulture);
             string returnString = "";
 
             for (int i = s.Length; i < length; i++)
@@ -126,7 +126,7 @@ namespace Extensions
         /// <returns> </returns>
         public static DateTime DaysAgo(this int days)
         {
-            TimeSpan t = new TimeSpan(days, 0, 0, 0);
+            var t = new TimeSpan(days, 0, 0, 0);
             return DateTime.Now.Subtract(t);
         }
 
@@ -137,7 +137,7 @@ namespace Extensions
         /// <returns> </returns>
         public static DateTime DaysFromNow(this int days)
         {
-            TimeSpan t = new TimeSpan(days, 0, 0, 0);
+            var t = new TimeSpan(days, 0, 0, 0);
             return DateTime.Now.Add(t);
         }
 
@@ -148,7 +148,7 @@ namespace Extensions
         /// <returns> </returns>
         public static DateTime HoursAgo(this int hours)
         {
-            TimeSpan t = new TimeSpan(hours, 0, 0);
+            var t = new TimeSpan(hours, 0, 0);
             return DateTime.Now.Subtract(t);
         }
 
@@ -159,7 +159,7 @@ namespace Extensions
         /// <returns> </returns>
         public static DateTime HoursFromNow(this int hours)
         {
-            TimeSpan t = new TimeSpan(hours, 0, 0);
+            var t = new TimeSpan(hours, 0, 0);
             return DateTime.Now.Add(t);
         }
 
@@ -170,7 +170,7 @@ namespace Extensions
         /// <returns> </returns>
         public static DateTime MinutesAgo(this int minutes)
         {
-            TimeSpan t = new TimeSpan(0, minutes, 0);
+            var t = new TimeSpan(0, minutes, 0);
             return DateTime.Now.Subtract(t);
         }
 
@@ -181,7 +181,7 @@ namespace Extensions
         /// <returns> </returns>
         public static DateTime MinutesFromNow(this int minutes)
         {
-            TimeSpan t = new TimeSpan(0, minutes, 0);
+            var t = new TimeSpan(0, minutes, 0);
             return DateTime.Now.Add(t);
         }
 
@@ -192,7 +192,7 @@ namespace Extensions
         /// <returns> </returns>
         public static DateTime SecondsAgo(this int seconds)
         {
-            TimeSpan t = new TimeSpan(0, 0, seconds);
+            var t = new TimeSpan(0, 0, seconds);
             return DateTime.Now.Subtract(t);
         }
 
@@ -203,7 +203,7 @@ namespace Extensions
         /// <returns> </returns>
         public static DateTime SecondsFromNow(this int seconds)
         {
-            TimeSpan t = new TimeSpan(0, 0, seconds);
+            var t = new TimeSpan(0, 0, seconds);
             return DateTime.Now.Add(t);
         }
 
@@ -269,17 +269,15 @@ namespace Extensions
         /// <returns> </returns>
         public static TimeSpan Time(this int num, bool convertSingleDigitsToHours)
         {
-            TimeSpan time = TimeSpan.MinValue;
             if (convertSingleDigitsToHours)
             {
                 if (num <= 24)
                     num *= 100;
             }
             int hours = num/100;
-            int hour = hours;
             int minutes = num%100;
 
-            time = new TimeSpan(hours, minutes, 0);
+            var time = new TimeSpan(hours, minutes, 0);
             return time;
         }
 

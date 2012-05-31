@@ -318,6 +318,7 @@ namespace Extensions
         /// </summary>
         /// <typeparam name="T"> Type of items to use. </typeparam>
         /// <param name="instance"> Object to check. </param>
+        /// <param name="paramName"> name of parameter </param>
         /// <param name="errorMessage"> Description of the object being validated that will be added to error errorMessage. </param>
         /// <returns> Object supplied </returns>
         public static T ValidateNotZero<T>(this T instance, string paramName, string errorMessage = "")

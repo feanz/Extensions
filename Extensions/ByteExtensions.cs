@@ -227,7 +227,7 @@ namespace Extensions
             return temp;
         }
 
-        private static Stream GetStream(MemoryStream stream, CompressionMode mode, CompressionType compressionType)
+        private static Stream GetStream(Stream stream, CompressionMode mode, CompressionType compressionType)
         {
             if (compressionType == CompressionType.Deflate)
                 return new DeflateStream(stream, mode, true);
