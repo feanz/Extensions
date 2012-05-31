@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Utilities
+namespace Extensions
 {
     public static class TypeHelper
     {
