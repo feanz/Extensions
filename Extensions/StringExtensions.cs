@@ -91,28 +91,6 @@ namespace Extensions
         }
 
         /// <summary>
-        ///   Compares two string case insensitive
-        /// </summary>
-        /// <param name="text"> </param>
-        /// <param name="compare"> </param>
-        /// <returns> </returns>
-        public static bool IsSameAs(this string text, string compare)
-        {
-            return String.Equals(text, compare, StringComparison.OrdinalIgnoreCase);
-        }
-
-        /// <summary>
-        ///   Compare strings trimmed
-        /// </summary>
-        /// <param name="text"> </param>
-        /// <param name="compare"> </param>
-        /// <returns> </returns>
-        public static bool IsSameAsTrimmed(this string text, string compare)
-        {
-            return String.Equals(text.Trim(), compare.Trim(), StringComparison.OrdinalIgnoreCase);
-        }
-
-        /// <summary>
         ///   Determines if a string is unicode
         /// </summary>
         /// <param name="text"> Input string </param>
@@ -209,19 +187,6 @@ namespace Extensions
         #endregion
 
         #region Strings
-
-        /// <summary>
-        ///   Converts ASCII encoding to Unicode
-        /// </summary>
-        /// <param name="asciiCode"> The ASCII code. </param>
-        /// <returns> </returns>
-        public static string AsciiToUnicode(this int asciiCode)
-        {
-            var ascii = Encoding.UTF32;
-            var c = (char) asciiCode;
-            var b = ascii.GetBytes(c.ToString(CultureInfo.InvariantCulture));
-            return ascii.GetString((b));
-        }
 
         /// <summary>
         ///   Returns the decimal representation of a binary number.
@@ -378,17 +343,6 @@ namespace Extensions
         public static string HexToDecimal(this string hex)
         {
             return Convert.ToString(Convert.ToInt32(hex, 16));
-        }
-
-        /// <summary>
-        ///   Returns the start of the string up to the specified max length
-        /// </summary>
-        /// <param name="text"> </param>
-        /// <param name="maxLength"> </param>
-        /// <returns> </returns>
-        public static string MaxLength(this string text, int maxLength)
-        {
-            return (text.Length > maxLength ? text.Substring(0, maxLength - 1) : text);
         }
 
         /// <summary>

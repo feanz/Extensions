@@ -34,12 +34,12 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Benchmark\BenchmarkExtensions.cs" />
     <Compile Include="Boolean.cs" />
     <Compile Include="ByteExtensions.cs" />
     <Compile Include="CollectionExtensions.cs" />

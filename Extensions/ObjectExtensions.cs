@@ -182,7 +182,7 @@ namespace Extensions
         /// </summary>
         /// <param name="toBeSerialized"> </param>
         /// <returns> </returns>
-        public static string ToXML(this object toBeSerialized)
+        public static string ToXml(this object toBeSerialized)
         {
             var fullName = toBeSerialized.GetType().FullName;
             if (fullName != null && !fullName.Contains("AnonymousType"))
